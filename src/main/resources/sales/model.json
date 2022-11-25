@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "defaultSchema": "CUSTOM_TABLE",
+  "schemas": [
+    {
+      "name": "CUSTOM_TABLE",
+      "tables": [
+        {
+          "name": "EMPS",
+          "type": "custom",
+          "factory": "org.apache.calcite.adapter.csv.CsvTableFactory",
+          "operand": {
+            "file": "EMPS.csv.gz",
+            "flavor": "scannable"
+          }
+        },
+        {
+          "name": "DEPTS",
+          "type": "custom",
+          "factory": "org.apache.calcite.adapter.csv.CsvTableFactory",
+          "operand": {
+            "file": "DEPTS.csv",
+            "flavor": "scannable"
+          }
+        }
+      ]
+    }
+  ]
+}
